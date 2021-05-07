@@ -10,7 +10,6 @@
   <canvas id="myChart" width="400" height="400"></canvas>
   <script>
     var ctx = document.getElementById('myChart').getContext('2d');
-    ctx.height = 800;
     var data = {
       "labels": [
         "01_math", "02_string_concat", "03_1_string_number_concat", "03_2_string_number_format", "04_string_simple_functions", "05_string_multibyte", "06_string_manipulation", "07_regex", "08_1_hashing", "08_2_crypt", "09_json_encode", "10_json_decode", "11_serialize", "12_unserialize", "13_array_fill", "14_array_range", "14_array_unset", "15_loops", "16_loop_ifelse", "17_loop_ternary", "18_1_loop_defined_access", "18_2_loop_undefined_access", "19_type_functions", "20_type_conversion", "21_0_loop_exception_none", "21_1_loop_exception_try", "21_2_loop_exception_catch", "22_loop_null_op", "23_loop_spaceship_op", "26_1_class_public_properties", "26_2_class_getter_setter", "26_3_class_magic_methods"
@@ -67,6 +66,9 @@
       data: data,
       options: options
     });
+    
+    var ctx = document.getElementById("myChart");
+ctx.height = 500;
   </script>
 </body>
 
