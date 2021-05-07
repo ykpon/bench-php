@@ -3,13 +3,11 @@
 
 <head>
   <title>PHP 5.6-8.0 benchmarks</title>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 </head>
 
 <body>
-  <div style="height: 600px">
-    <canvas id="myChart" width="400" height="400"></canvas>
-  </div>
+  <canvas id="myChart" height="1000"></canvas>
   <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var data = {
@@ -60,7 +58,9 @@
             }
           }
         ]
-      }
+      },
+	  "responsive": true,
+	  "maintainAspectRatio": false
     };
 
     var myChart = new Chart(ctx, {
