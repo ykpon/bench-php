@@ -10,8 +10,9 @@
 <body>
   <canvas id="myChart" height="1000"></canvas>
   <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var data = {
+    var myChart = new Chart(document.getElementById('myChart').getContext('2d'), {
+      type: 'bar',
+      data: {
       "labels": labels,
       "datasets": [
         {
@@ -39,8 +40,8 @@
           "data": benchData['sec']['8.0']
         }
       ]
-    };
-    var options = {
+    },
+      options: {
       "title": {
         "display": true,
         "text": "Seconds (low is better)",
@@ -60,12 +61,7 @@
       },
 	  "responsive": true,
 	  "maintainAspectRatio": false
-    };
-
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: data,
-      options: options
+    }
     });
   </script>
 </body>
