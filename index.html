@@ -8,60 +8,225 @@
 </head>
 
 <body>
-  <canvas id="myChart" height="1000"></canvas>
+  <canvas id="a" height="1000"></canvas>
+  <canvas id="b" height="1000"></canvas>
+  <canvas id="c" height="1000"></canvas>
+  <canvas id="d" height="1000"></canvas>
   <script>
-    var myChart = new Chart(document.getElementById('myChart').getContext('2d'), {
+    var a = new Chart(document.getElementById('a').getContext('2d'), {
       type: 'bar',
       data: {
-      "labels": labels,
-      "datasets": [
-        {
-          "label": "PHP 5.6",
-          "backgroundColor": "#0056c7",
-          "fill": true,
-          "data": benchData['sec']['5.6']
-        },
-        {
-          "label": "PHP 7.0",
-          "backgroundColor": "#0062ff",
-          "fill": true,
-          "data": benchData['sec']['7.0']
-        },
-        {
-          "label": "PHP 7.4",
-          "backgroundColor": "#037ae2",
-          "fill": true,
-          "data": benchData['sec']['7.4']
-        },
-        {
-          "label": "PHP 8.0",
-          "backgroundColor": "#0091ff",
-          "fill": true,
-          "data": benchData['sec']['8.0']
-        }
-      ]
-    },
-      options: {
-      "title": {
-        "display": true,
-        "text": "Seconds (low is better)",
-        "fullWidth": true
-      },
-      "legend": {
-        "display": true
-      },
-      "scales": {
-        "yAxes": [
+        "labels": labels,
+        "datasets": [
           {
-            "ticks": {
-              "beginAtZero": true
-            }
+            "label": "PHP 5.6",
+            "backgroundColor": "#0056c7",
+            "fill": true,
+            "data": benchData['sec']['5.6']
+          },
+          {
+            "label": "PHP 7.0",
+            "backgroundColor": "#0062ff",
+            "fill": true,
+            "data": benchData['sec']['7.0']
+          },
+          {
+            "label": "PHP 7.4",
+            "backgroundColor": "#037ae2",
+            "fill": true,
+            "data": benchData['sec']['7.4']
+          },
+          {
+            "label": "PHP 8.0",
+            "backgroundColor": "#0091ff",
+            "fill": true,
+            "data": benchData['sec']['8.0']
           }
         ]
       },
-	  "responsive": true,
-	  "maintainAspectRatio": false
-    }
+      options: {
+        "title": {
+          "display": true,
+          "text": "Seconds (low is better)",
+          "fullWidth": true
+        },
+        "legend": {
+          "display": true
+        },
+        "scales": {
+          "yAxes": [
+            {
+              "ticks": {
+                "beginAtZero": true
+              }
+            }
+          ]
+        },
+        "responsive": true,
+        "maintainAspectRatio": false
+      }
+    });
+
+    var b = new Chart(document.getElementById('b').getContext('2d'), {
+      type: 'bar',
+      data: {
+        "labels": labels,
+        "datasets": [
+          {
+            "label": "PHP 5.6",
+            "backgroundColor": "#0056c7",
+            "fill": true,
+            "data": benchData['ops']['5.6']
+          },
+          {
+            "label": "PHP 7.0",
+            "backgroundColor": "#0062ff",
+            "fill": true,
+            "data": benchData['ops']['7.0']
+          },
+          {
+            "label": "PHP 7.4",
+            "backgroundColor": "#037ae2",
+            "fill": true,
+            "data": benchData['ops']['7.4']
+          },
+          {
+            "label": "PHP 8.0",
+            "backgroundColor": "#0091ff",
+            "fill": true,
+            "data": benchData['ops']['8.0']
+          }
+        ]
+      },
+      options: {
+        "title": {
+          "display": true,
+          "text": "OP/SEC (high is better)",
+          "fullWidth": true
+        },
+        "legend": {
+          "display": true
+        },
+        "scales": {
+          "yAxes": [
+            {
+              "ticks": {
+                "beginAtZero": true
+              }
+            }
+          ]
+        },
+        "responsive": true,
+        "maintainAspectRatio": false
+      }
+    });
+
+    var c = new Chart(document.getElementById('c').getContext('2d'), {
+      type: 'bar',
+      data: {
+        "labels": labels,
+        "datasets": [
+          {
+            "label": "PHP 5.6",
+            "backgroundColor": "#0056c7",
+            "fill": true,
+            "data": benchData['mhz']['5.6']
+          },
+          {
+            "label": "PHP 7.0",
+            "backgroundColor": "#0062ff",
+            "fill": true,
+            "data": benchData['mhz']['7.0']
+          },
+          {
+            "label": "PHP 7.4",
+            "backgroundColor": "#037ae2",
+            "fill": true,
+            "data": benchData['mhz']['7.4']
+          },
+          {
+            "label": "PHP 8.0",
+            "backgroundColor": "#0091ff",
+            "fill": true,
+            "data": benchData['mhz']['8.0']
+          }
+        ]
+      },
+      options: {
+        "title": {
+          "display": true,
+          "text": "OP/SEC/MHz (high is better)",
+          "fullWidth": true
+        },
+        "legend": {
+          "display": true
+        },
+        "scales": {
+          "yAxes": [
+            {
+              "ticks": {
+                "beginAtZero": true
+              }
+            }
+          ]
+        },
+        "responsive": true,
+        "maintainAspectRatio": false
+      }
+    });
+
+    var d = new Chart(document.getElementById('d').getContext('2d'), {
+      type: 'bar',
+      data: {
+        "labels": labels,
+        "datasets": [
+          {
+            "label": "PHP 5.6",
+            "backgroundColor": "#0056c7",
+            "fill": true,
+            "data": benchData['mem']['5.6']
+          },
+          {
+            "label": "PHP 7.0",
+            "backgroundColor": "#0062ff",
+            "fill": true,
+            "data": benchData['mem']['7.0']
+          },
+          {
+            "label": "PHP 7.4",
+            "backgroundColor": "#037ae2",
+            "fill": true,
+            "data": benchData['mem']['7.4']
+          },
+          {
+            "label": "PHP 8.0",
+            "backgroundColor": "#0091ff",
+            "fill": true,
+            "data": benchData['mem']['8.0']
+          }
+        ]
+      },
+      options: {
+        "title": {
+          "display": true,
+          "text": "Memory usage (low is better)",
+          "fullWidth": true
+        },
+        "legend": {
+          "display": true
+        },
+        "scales": {
+          "yAxes": [
+            {
+              "ticks": {
+                "beginAtZero": true
+              }
+            }
+          ]
+        },
+        "responsive": true,
+        "maintainAspectRatio": false
+      }
     });
   </script>
 </body>
